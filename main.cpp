@@ -47,9 +47,7 @@ ERA_DISCONNECTED() {
 
 /* This function print uptime every second */
 void timerEvent() {
-    console.requestHumidity(100);
-    console.requestTemperature(100);
-    console.requestDistance(100);
+
     printf("Uptime: %d\r\n", ERaMillis() / 1000L);
 }
 
@@ -66,6 +64,7 @@ void setup() {
 void loop() {
     ERa.run();
     console.run();
+   ERa.virtualWrite(V0,9);
 }
 
 int main(int argc, char* argv[]) {
